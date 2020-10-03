@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState, useMemo } from 'react';
 import DayPicker, { DayModifiers } from 'react-day-picker';
 import ptBR, { isToday, format, parseISO, isAfter } from 'date-fns';
+import { Link } from 'react-router-dom';
 
 import 'react-day-picker/lib/style.css';
 import { FiPower, FiClock } from 'react-icons/fi';
@@ -58,6 +59,7 @@ const Dashboard: React.FC = () => {
     setCurrentMonth(month);
   }, []);
 
+  // month-availability
   useEffect(() => {
     api
       .get(`/providers/${user.id}/month-availability`, {
@@ -72,6 +74,7 @@ const Dashboard: React.FC = () => {
       .then(response => setMonthAvailability(response.data));
   }, [currentMonth, user.id]);
 
+  // my-appointments
   useEffect(() => {
     api
       .get<Appointment[]>('/appointments/me', {
@@ -145,7 +148,9 @@ const Dashboard: React.FC = () => {
             <img src={user.avatar_url} alt={user.name} />
             <div>
               <span>Bem-vindo,</span>
-              <strong>{user.name}</strong>
+              <Link to="/profile">
+                <strong>{user.name}</strong>
+              </Link>
             </div>
           </Profile>
 
