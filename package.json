@@ -66,6 +66,7 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/react-hooks": "^3.4.2",
     "@types/date-fns": "^2.6.0",
     "@types/react-router-dom": "^5.1.5",
     "@types/yup": "^0.29.3",
