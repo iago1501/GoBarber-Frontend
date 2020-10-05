@@ -70,12 +70,14 @@
     "@types/date-fns": "^2.6.0",
     "@types/react-router-dom": "^5.1.5",
     "@types/yup": "^0.29.3",
+    "axios-mock-adapter": "^1.18.2",
     "eslint": "6.8.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-import-resolver-typescript": "^2.0.0",
     "eslint-plugin-prettier": "^3.1.4",
     "jest-environment-jsdom-sixteen": "^1.0.3",
     "jest-styled-components": "^7.0.3",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "react-test-renderer": "^16.13.1"
   }
 }
